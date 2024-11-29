@@ -51,6 +51,7 @@ android {
 
 dependencies {
     implementation(project(":library:designsystem"))
+    implementation(project(":feature:countdown"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
