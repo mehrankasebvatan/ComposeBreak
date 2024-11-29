@@ -1,4 +1,4 @@
-package ir.kasebvatan.composebreak.ui.theme
+package ir.kasebvatan.designsystem.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
