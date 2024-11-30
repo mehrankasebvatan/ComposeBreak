@@ -1,6 +1,7 @@
 package ir.kasebvatan.countdown.component
 
 import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,9 +29,10 @@ fun Counter(
 @Composable
 private fun CounterPreview() {
     ComposeBreakTheme {
-        Counter(
-            minutes = "19", seconds = "39"
-        )
+        Surface {
+            Counter(
+                minutes = "19", seconds = "39"
+            )
+        }
     }
-
 }
