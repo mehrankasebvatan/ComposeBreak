@@ -31,3 +31,4 @@ include(
     ":library:designsystem",
     ":feature:countdown"
 )
+include(":library:ext-functions")
