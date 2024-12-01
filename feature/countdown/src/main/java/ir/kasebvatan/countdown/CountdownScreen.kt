@@ -13,7 +13,6 @@ import androidx.compose.ui.unit.dp
 import ir.kasebvatan.countdown.component.Counter
 import ir.kasebvatan.countdown.component.CounterController
 import ir.kasebvatan.countdown.model.CountdownState
-import ir.kasebvatan.countdown.model.CounterState
 import ir.kasebvatan.designsystem.theme.ComposeBreakTheme
 import ir.kasebvatan.designsystem.theme.ThemePreviews
 
@@ -21,13 +20,16 @@ import ir.kasebvatan.designsystem.theme.ThemePreviews
 fun CountdownRoute(
     viewModel: CountdownViewModel
 ) {
+    CountdownScreen(
+        countdownState = viewModel.countdownState.value,
+        onResetClicked = { viewModel.resetCountdown() },
+        onStartClicked = { viewModel.startCountdown() })
 
 }
 
 
 @Composable
 fun CountdownScreen(
-    counterState: CounterState,
     countdownState: CountdownState,
     onResetClicked: () -> Unit,
     onStartClicked: () -> Unit,
@@ -43,7 +45,7 @@ fun CountdownScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        CounterController(counterState = counterState,
+        CounterController(counterState = countdownState.counterState,
             onResetClicked = { onResetClicked() },
             onStartClicked = { onStartClicked() })
     }
@@ -57,7 +59,7 @@ private fun CountdownScreenPreview() {
 
     ComposeBreakTheme {
         Surface {
-            CountdownScreen(counterState = CounterState.INITIAL,
+            CountdownScreen(
                 countdownState = CountdownState(),
                 onResetClicked = { },
                 onStartClicked = {})

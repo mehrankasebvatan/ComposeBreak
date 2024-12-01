@@ -1,10 +1,10 @@
 package ir.kasebvatan.ext_functions
 
-val Int.minutes: Int
+val Long.minutes: Long
     get() = this / 60
 
 
-val Int.seconds: Int
+val Long.seconds: Long
     get() = this % 60
 
 
