@@ -16,7 +16,7 @@ data class CountdownState(
 )
 
 enum class CounterState {
-    INITIAL, PLAY, PAUSE, STOP
+    INITIAL, PLAY, PAUSE
 }
 
 enum class WorkingState {
