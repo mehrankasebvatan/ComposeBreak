@@ -9,21 +9,22 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import ir.kasebvatan.countdown.CountdownState
+import ir.kasebvatan.countdown.model.CountdownState
 import ir.kasebvatan.designsystem.theme.ComposeBreakTheme
 import ir.kasebvatan.designsystem.theme.ThemePreviews
 import ir.kasebvatan.ext_functions.minutes
 import ir.kasebvatan.ext_functions.seconds
+import ir.kasebvatan.ext_functions.toTwoDigitFormat
 
 @Composable
 fun Counter(countdownState: CountdownState) {
 
     val minutes by remember {
-        mutableStateOf(countdownState.remainTime.minutes.toString())
+        mutableStateOf(countdownState.remainTime.minutes.toString().toTwoDigitFormat())
     }
 
     val seconds by remember {
-        mutableStateOf(countdownState.remainTime.seconds.toString())
+        mutableStateOf(countdownState.remainTime.seconds.toString().toTwoDigitFormat())
     }
 
     Row(
