@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -20,8 +21,10 @@ import ir.kasebvatan.designsystem.theme.ThemePreviews
 fun CountdownRoute(
     viewModel: CountdownViewModel
 ) {
+
+    val state = viewModel.countdownState.collectAsState().value
     CountdownScreen(
-        countdownState = viewModel.countdownState.value,
+        countdownState = state,
         onResetClicked = { viewModel.resetCountdown() },
         onStartClicked = { viewModel.startCountdown() })
 
