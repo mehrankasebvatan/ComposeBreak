@@ -5,39 +5,32 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Scaffold
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import ir.kasebvatan.countdown.CountdownScreen
+import ir.kasebvatan.countdown.CountdownRoute
+import ir.kasebvatan.countdown.CountdownViewModel
 import ir.kasebvatan.designsystem.theme.ComposeBreakTheme
-import ir.kasebvatan.designsystem.theme.ThemePreviews
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val countdownViewModel: CountdownViewModel by viewModels()
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             ComposeBreakTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) {
-                    CountdownScreen()
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    CountdownRoute(viewModel = countdownViewModel)
                 }
             }
         }
-    }
-}
-
-
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@ThemePreviews
-@Composable
-fun GreetingPreview() {
-    ComposeBreakTheme {
-        Scaffold(modifier = Modifier.fillMaxSize()) {
-            CountdownScreen()
-        }
-
     }
 }

@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/feature/countdown" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/library/designsystem" />
+            <option value="$PROJECT_DIR$/library/ext-functions" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "ir.kasebvatan.countdown"
+    namespace = "ir.kasebvatan.ext_functions"
     compileSdk = 34
 
     defaultConfig {
@@ -30,17 +30,8 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
 }
 
 dependencies {
-    implementation(project(":library:designsystem"))
-    implementation(project(":library:ext-functions"))
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    testImplementation(libs.junit)
 }
